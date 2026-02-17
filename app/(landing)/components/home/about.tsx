@@ -3,82 +3,92 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-type aboutSkill = {
-    name: string;
-    percentage: number;
-}
+type AboutSkill = {
+  name: string;
+  percentage: number;
+};
 
-const skills: aboutSkill[] = [
-    {
-        name: "HTML & CSS",
-        percentage: 90
-    },
-    {
-        name: "Javascript",
-        percentage: 75
-    },
-    {
-        name: "PHP",
-        percentage: 85
-    },
-    {
-        name: "Golang",
-        percentage: 80
-    },
-]
+const skills: AboutSkill[] = [
+  { name: "PHP", percentage: 88 },
+  { name: "Golang", percentage: 80 },
+  { name: "TypeScript", percentage: 75 },
+  { name: "Node JS", percentage: 70 },
+];
 
 const AboutSection = () => {
-    const [width, setWidth] = useState<number[]>([]);
-    useEffect(() => {
-        setWidth(skills.map(() => 0))
+  const [width, setWidth] = useState<number[]>([]);
 
-        const timeout = setTimeout(() => {
-            setWidth(skills.map(skill => skill.percentage))
-        }, 100)
-        return () => clearTimeout(timeout)
-    }, []);
+  useEffect(() => {
+    setWidth(skills.map(() => 0));
 
-    return (
-        <section id="about-section" className="bg-gradient-to-t from-blue-100 to-blue-50 h-full py-20">
-            <div className="relative mx-40 xxl:mx-0.5 z-10 rounded-2xl drop-shadow-2xl p-10 bg-white">
-                <div className="flex justify-between px-10 items-center rounded-2xl">    
-                    <div className="h-auto">
-                        <div className="max-w-200 h-auto object-fill overflow-hidden rounded-xl">
-                            <Image 
-                                src="/images/profile-about.png"
-                                alt="Profile About Image"
-                                width={400}
-                                height={300}
-                            />
-                        </div>
-                    </div>
-                    <div className="w-[33rem] py-10">
-                        <h2 className="text-3xl max-md:text-center font-semibold mb-5 text-primary/100">
-                            WHO IAM I ?
-                        </h2>
-                        <p className="text-base text-gray-600">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, aperiam porro eos ab animi distinctio tempore aliquam magni deserunt veniam dicta blanditiis, sit accusamus tenetur dolor aliquid obcaecati, nihil voluptas!
-                        </p>
-                        <div className="max-w-3xl space-y-8 py-6">
-                         { skills.map((skill, index) => (
-                            <div key={index}>
-                                <div className="flex justify-between items-center mb-2">
-                                    <span className="font-bold text-primary/100">{ skill.name }</span>
-                                    <span className="font-bold text-primary/100">{ skill.percentage }%</span>
-                                </div>
-                                <div className="w-full bg-gray-200 rounded-full overflow-hidden h-3">
-                                <div
-                                    className="h-full bg-primary rounded-full transition-all duration-700 ease-out"
-                                    style={{ width: `${width[index]}%` }}
-                                />
-                                </div>
-                            </div>
-                         ))}
-                        </div>
-                    </div>
+    const timeout = setTimeout(() => {
+      setWidth(skills.map((skill) => skill.percentage));
+    }, 200);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
+    <section
+      id="about-section"
+      className="bg-gradient-to-t from-blue-100 to-blue-50 py-16 px-6"
+    >
+      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+
+        {/* FLEX CONTAINER */}
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-12">
+
+          {/* LEFT SIDE (IMAGE) */}
+          <div className="w-full lg:w-1/2 flex justify-center bg-gray-200 rounded-full">
+            <Image
+              src="/images/profile-about.png"
+              alt="Profile About Image"
+              width={420}
+              height={320}
+              className="rounded-2xl object-cover"
+            />
+          </div>
+
+          {/* RIGHT SIDE (TEXT + SKILLS) */}
+          <div className="w-full lg:w-1/2">
+
+            <h2 className="text-3xl font-semibold text-primary italic mb-6">
+              WHO IAM I?
+            </h2>
+
+            <p className="text-gray-600 leading-relaxed mb-8">
+              I am a <b className="text-primary">Fullstack Web Developer</b> with a strong passion for building systems and designing applications. I focus on creating applications that are functional, clean, and user friendly with strong attention to detail and long-term system quality.
+            </p>
+
+            {/* Skills */}
+            <div className="space-y-6">
+              {skills.map((skill, index) => (
+                <div key={index}>
+                  <div className="flex justify-between mb-2">
+                    <span className="font-semibold text-primary">
+                      {skill.name}
+                    </span>
+                    <span className="font-semibold text-primary">
+                      {skill.percentage}%
+                    </span>
+                  </div>
+
+                  <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-blue-300 to-primary rounded-full transition-all duration-700 ease-out"
+                      style={{ width: `${width[index]}%` }}
+                    />
+                  </div>
                 </div>
+              ))}
             </div>
-        </section>
-    )
-}
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
 export default AboutSection;
