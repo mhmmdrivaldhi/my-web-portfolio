@@ -89,6 +89,9 @@
 
 * {
   @apply font-poppins;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .dark {
