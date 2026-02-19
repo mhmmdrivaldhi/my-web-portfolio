@@ -44,7 +44,7 @@ const projects: Projects[] = [
 const PortfolioSection = () => {
     return (
         <section id="portfolio-section" className="scroll-mt-28 min-h-screen bg-gradient-to-t from-blue-100 to-blue-50 py-10">
-            <div className="max-w-3xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto px-6 sm:px-6 lg:px-8" data-aos="fade-up">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-primary/100 italic">
                         PORTFOLIO
@@ -56,7 +56,7 @@ const PortfolioSection = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto px-10 py-5 rounded-3xl">
                 { projects.map((project, index) => (
-                   <div key={index} className="group bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg">
+                   <div key={index} className="group bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg" data-aos="zoom-in-up">
                         <div className="relative w-full h-56 overflow-hidden">
                             <Image
                             src={project.imageUrl}

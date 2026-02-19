@@ -74,10 +74,10 @@ const Header = () => {
 
         {/* Logo */}
         <Image
-          src="/images/logo-reontech-v1.png"
+          src="/images/logo-reontech-v2.png"
           alt="Logo"
-          width={60}
-          height={60}
+          width={120}
+          height={120}
         />
 
         {/* Desktop Nav */}
@@ -108,9 +108,9 @@ const Header = () => {
         {/* Mobile Button */}
         <div className="md:hidden">
           {mobileOpen ? (
-            <FiX onClick={() => setMobileOpen(false)} />
+            <FiX size={24} onClick={() => setMobileOpen(false)} />
           ) : (
-            <FiMenu onClick={() => setMobileOpen(true)} />
+            <FiMenu size={24} onClick={() => setMobileOpen(true)} />
           )}
         </div>
       </div>

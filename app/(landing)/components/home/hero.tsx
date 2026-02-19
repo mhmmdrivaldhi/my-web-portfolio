@@ -33,14 +33,13 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 flex px-10 h-full flex-col items-center justify-center mt-32">
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-5 lg:py-0 h-full flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 w-full" data-aos="fade-down">
             <div className="
               order-1 lg:order-2
               flex justify-center lg:justify-end
               w-full z-10">
               <ProfileCard />
             </div>
-            {/* ✅ Left Content */}
             <div className="
               order-2 lg:order-1
               text-center lg:text-left
