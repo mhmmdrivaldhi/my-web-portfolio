@@ -27,7 +27,7 @@ const services: Service[] = [
 const ServiceSection = () => {
     return (
         <section id="services-section" className="bg-gradient-to-b from-blue-100 to-blue-50 py-10">
-            <div className="text-center max-w-3xl mx-auto mb-4 p-4">
+            <div className="text-center max-w-3xl mx-auto mb-4 p-4" data-aos="fade-up">
                 <div>
                     <h2 className="mt-4 text-2xl md:text-3xl font-bold text-primary">
                         End-to-End FullStack Web Development Services
@@ -40,8 +40,8 @@ const ServiceSection = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mx-auto px-10 py-5 rounded-3xl">
                 { services.map((service, index) => (
-                    <div key={index} className="relative rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 backdrop-blur border-2 border-primary/20 transition-all duration-300 hover:-translate-y-1 hover:border-primary/100 p-10">
-                        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20 text-primary">
+                    <div key={index} className="relative rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 backdrop-blur border-2 border-primary/20 transition-all duration-300 hover:-translate-y-1 hover:border-primary/100 p-10" data-aos="zoom-in-up">
+                        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20 text-primary" >
                             { index === 0 && <LayoutTemplate size={28} /> }
                             { index === 1 && <Layers2 size={28} /> }
                             { index === 2 && <Server size={28} /> }

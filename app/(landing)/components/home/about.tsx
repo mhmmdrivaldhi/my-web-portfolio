@@ -34,12 +34,8 @@ const AboutSection = () => {
       className="bg-gradient-to-t from-blue-100 to-blue-50 py-16 px-6"
     >
       <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8">
-
-        {/* FLEX CONTAINER */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-12">
-
-          {/* LEFT SIDE (IMAGE) */}
-          <div className="w-full lg:w-1/2 flex justify-center bg-gray-200 rounded-full">
+          <div className="w-full lg:w-1/2 flex justify-center bg-gray-200 rounded-full" data-aos="fade-right">
             <Image
               src="/images/profile-about.png"
               alt="Profile About Image"
@@ -48,10 +44,7 @@ const AboutSection = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-
-          {/* RIGHT SIDE (TEXT + SKILLS) */}
-          <div className="w-full lg:w-1/2">
-
+          <div className="w-full lg:w-1/2" data-aos="fade-left">
             <h2 className="text-3xl font-semibold text-primary italic mb-6">
               WHO IAM I?
             </h2>
@@ -60,7 +53,6 @@ const AboutSection = () => {
               I am a <b className="text-primary">Fullstack Web Developer</b> with a strong passion for building systems and designing applications. I focus on creating applications that are functional, clean, and user friendly with strong attention to detail and long-term system quality.
             </p>
 
-            {/* Skills */}
             <div className="space-y-6">
               {skills.map((skill, index) => (
                 <div key={index}>

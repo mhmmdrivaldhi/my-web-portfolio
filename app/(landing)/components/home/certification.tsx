@@ -55,9 +55,10 @@ export default function GallerySection() {
               hover:shadow-2xl
               transition-all
               duration-500
-              hover:-translate-y-2
-              ${index === 0 ? "lg:col-span-2 lg:row-span-2" : ""}
-            `}
+              ${index === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`
+            }
+            data-aos={`${index === 0 ? "zoom-in-right" : "fade-left"}`}
+            
           >
             <Image
               src={item.src}
@@ -67,7 +68,7 @@ export default function GallerySection() {
                 object-cover
                 transition-transform
                 duration-700
-                group-hover:scale-110
+                group-hover:scale-100
               "
             />
             <div className="
