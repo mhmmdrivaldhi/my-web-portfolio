@@ -16,6 +16,14 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Muhammad Rivaldhi's Portfolio",
   description: "This is Muhammad Rivaldhi's personal portfolio website.",
+  icons: {
+    icon: [
+      {
+        url: "/images/logo-reontech-v1.png",
+        type: "image/png",
+      }
+    ]
+  }
 };
 
 export default function RootLayout({

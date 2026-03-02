@@ -1,43 +1,58 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 import { FiGithub, FiGlobe } from "react-icons/fi"
 
 type Projects = {
     imageUrl: string,
     title: string,
     description: string,
+    githubUrl?: string,
+    liveDemoUrl?: string
 }
 
 const projects: Projects[] = [
     {
         imageUrl: "/images/portfolio/sporton-demo.png",
         title: "SportOn E-Commerce Website",
-        description: "Online sales platform for sports equipment with a secure transaction system and a modern, responsive appearance."
+        description: "Online sales platform for sports equipment with a secure transaction system and a modern, responsive appearance.",
+        githubUrl: "https://github.com/mhmmdrivaldhi/sporton-website-fe-deploy-vercel",
+        liveDemoUrl: "https://sporton-website-fe-deploy-vercel.vercel.app/"
     },
     {
         imageUrl: "/images/portfolio/personal-blog.png",
         title: "Personal Blog Website",
-        description: "Website sharing articles about technology and sports with a clean design, easy navigation, and a comfortable reading experience."
+        description: "Website sharing articles about technology and sports with a clean design, easy navigation, and a comfortable reading experience.",
+        githubUrl: "https://github.com/mhmmdrivaldhi/my-blog-website",
+        liveDemoUrl: "",
     },
     {
         imageUrl: "/images/portfolio/pengaduan-masyarakt-demo.png",
         title: "Public Complaints Application Website",
-        description: "Web platform to submit and monitor public complaints quickly, structured and transparently to improve the quality of public services."
+        description: "Web platform to submit and monitor public complaints quickly, structured and transparently to improve the quality of public services.",
+        githubUrl: "https://github.com/mhmmdrivaldhi/ukk-aplikasi-pengaduan-masyarakat",
+        liveDemoUrl: ""
     },
     {
         imageUrl: "/images/portfolio/landing-page-indiecoffe.png",
         title: "Landing Page Coffe Shop",
-        description: "Interactive promotional page that displays brand profiles, featured menus, and ordering information in an attractive manner."
+        description: "Interactive promotional page that displays brand profiles, featured menus, and ordering information in an attractive manner.",
+        githubUrl: "https://github.com/mhmmdrivaldhi/kopi-dan-senja-indiecofee",
+        liveDemoUrl: "https://kopi-dan-senja-indiecofee.vercel.app"
     },
     {
         imageUrl: "/images/portfolio/employee-attendence.png",
         title: "Employee Attendance System",
-        description: "Digital system for recording employee attendance with selfie and geolocation features, managing absence data, and generating automatic and structured reports."
+        description: "Digital system for recording employee attendance with selfie and geolocation features, managing absence data, and generating automatic and structured reports.",
+        githubUrl: "https://github.com/mhmmdrivaldhi/project-absensi-karyawan",
+        liveDemoUrl: ""
     },
     {
         imageUrl: "/images/portfolio/landing-page-codeval.png",
         title: "Landing Page CodeValoper",
-        description: "Digital profile page that introduces website development services with professional, informative, and conversion-oriented designs."
+        description: "Digital profile page that introduces website development services with professional, informative, and conversion-oriented designs.",
+        githubUrl: "https://github.com/mhmmdrivaldhi/codevaloper-web-apps",
+        liveDemoUrl: "https://codevaloper-web-apps.vercel.app"
     },
 ]
 
@@ -76,14 +91,29 @@ const PortfolioSection = () => {
                                 </p>
                             </div>
                             <div className="mt-4 flex gap-3">
-                                <Button>
-                                    <FiGithub />
-                                    Souce Code
-                                </Button>
-                                <Button className="bg-transparent text-primary hover:text-white">
-                                    <FiGlobe />
-                                    Live Demo
-                                </Button>
+                                {project.githubUrl && (
+                                    <Button asChild>
+                                        <Link
+                                            href={project.githubUrl}
+                                            target="_blank"
+                                            className="ml-2"
+                                        >
+                                            <FiGithub /> Source Code
+                                        </Link>
+                                    </Button>
+                                )}
+
+                                {project.liveDemoUrl && (
+                                    <Button asChild variant="outline">
+                                        <Link
+                                            href={project.liveDemoUrl}
+                                            target="_blank"
+                                            className="ml-2"
+                                        >
+                                            <FiGlobe /> Live Demo
+                                        </Link>
+                                    </Button>
+                                )}
                             </div>
                         </div>
                    </div>    

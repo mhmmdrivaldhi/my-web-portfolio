@@ -5,20 +5,16 @@ import Image from "next/image"
 const ProfileCard = () => {
   return (
     <div className="relative w-full flex justify-center items-center">
-
-      {/* Background Shape */}
       <div className="absolute 
-        w-[260px] h-[200px]
-        md:w-[420px] md:h-[250px]
-        bg-gradient-to-br from-blue-100 to-blue-300 
-        rounded-[40px] 
-        -z-10">
+        md:w-[400px] md:h-[420px]
+        w-[320px] h-[380px]
+        rounded-[20px]
+        bg-white/20 backdrop-blur-xl  
+        -z-10 md:rounded-2xl">
       </div>
-
-      {/* Main Image */}
       <div className="relative z-10">
         <Image
-          src="/images/profile-thumbnail.png" // ganti sesuai path image kamu
+          src="/images/profile-thumbnail.png" 
           alt="Student"
           width={200}
           height={200}
