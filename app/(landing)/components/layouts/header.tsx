@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FiGithub, FiInstagram, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const navItems = [
   { name: "Home", id: "hero-section" },
@@ -100,9 +101,15 @@ const Header = () => {
 
         {/* Social */}
         <div className="hidden md:flex gap-8">
-          <FiGithub size={22} className="text-purple-800 cursor-pointer hover:scale-110 transition" />
-          <FiLinkedin size={22} className="text-blue-800 cursor-pointer hover:scale-110 transition" />
-          <FiInstagram size={22} className="text-pink-400 cursor-pointer hover:scale-110 transition" />
+          <Link href="https://github.com/mhmmdrivaldhi" target="_blank" rel="noopener noreferrer">
+            <FiGithub size={22} className="text-purple-800 cursor-pointer hover:scale-110 transition" />
+          </Link>
+          <Link href="https://www.linkedin.com/in/muhammad-rivaldhi/" target="_blank" rel="noopener noreferrer">
+            <FiLinkedin size={22} className="text-blue-800 cursor-pointer hover:scale-110 transition" />
+          </Link>
+          <Link href="https://www.instagram.com/mhmmdrivaldhi10_/" target="_blank" rel="noopener noreferrer">
+            <FiInstagram size={22} className="text-pink-400 cursor-pointer hover:scale-110 transition" />
+          </Link>
         </div>
 
         {/* Mobile Button */}
